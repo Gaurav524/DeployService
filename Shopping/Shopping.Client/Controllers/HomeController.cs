@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Shopping.Client.Data;
 
 namespace Shopping.Client.Controllers
 {
@@ -20,7 +21,7 @@ namespace Shopping.Client.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(ProductContext.Products);
         }
 
         public IActionResult Privacy()
