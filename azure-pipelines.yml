@@ -28,6 +28,7 @@ stages:
         pool: Self-Hosted-Ubuntu-Agent
         steps:
           - task: Docker@2
+          - bash: echo $(dockerfilePath)
             displayName: Build and push an image to container registry
             inputs:
               command: buildAndPush
