@@ -13,7 +13,7 @@ variables:
   dockerRegistryServiceConnection: "a21c1e62-e20c-40c5-8fa5-edecc5b9b211"
   imageRepository: "gauravdeployservice"
   containerRegistry: "shoppingarc.azurecr.io"
-  dockerfilePath: "$(Build.SourcesDirectory)/Shopping/Shopping.API/Dockerfile"
+  dockerfile: "$(Build.SourcesDirectory)/Shopping/Shopping.API/Dockerfile"
   tag: "$(Build.BuildId)"
 
   # Agent VM image name
@@ -32,7 +32,7 @@ stages:
             inputs:
               command: buildAndPush
               repository: $(imageRepository)
-              dockerfile: $(dockerfilePath)
+              dockerfile: $(dockerfile)
               containerRegistry: $(dockerRegistryServiceConnection)
               buildContext: $(Build.SourcesDirectory)/Shopping
               tags: |
