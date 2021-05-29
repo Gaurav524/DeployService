@@ -21,8 +21,7 @@ variables:
 
 stages:
   - stage: Build
-    displayName: Build and push stage
-    displayName: dockerfilePath
+    displayName: Build and push stage    
     jobs:
       - job: Build
         displayName: Build
@@ -34,6 +33,7 @@ stages:
               command: buildAndPush
               repository: $(imageRepository)
               dockerfile: $(dockerfilePath)
+              displayName: dockerfile
               containerRegistry: $(dockerRegistryServiceConnection)
               buildContext: $(Build.SourcesDirectory)/Shopping
               tags: |
