@@ -32,9 +32,8 @@ stages:
             inputs:
               command: buildAndPush
               repository: $(imageRepository)
-              dockerfile: $(dockerfilePath)
-              displayName: dockerfile
+              dockerfile: $(dockerfilePath)              
               containerRegistry: $(dockerRegistryServiceConnection)
-              buildContext: $(Build.SourcesDirectory)/Shopping
+              buildContext: $(Build.SourcesDirectory)/Shopping/Shopping.API
               tags: |
                 $(tag)
