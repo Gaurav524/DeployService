@@ -18,7 +18,7 @@ variables:
   imagePullSecret: "shoppingarc98551042-auth"
 
   # Agent VM image name
-  vmImageName: "Azure Pipelines"
+  vmImageName: "Self-Hosted-Ubuntu-Agent"
 
 stages:
   - stage: Build
@@ -26,7 +26,7 @@ stages:
     jobs:
       - job: Build
         displayName: Build
-        pool: Azure Pipelines
+        pool: Self-Hosted-Ubuntu-Agent
         steps:
           - task: Docker@2
             displayName: Build and push an image to container registry
