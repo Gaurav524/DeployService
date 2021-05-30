@@ -49,8 +49,7 @@ stages:
     jobs:
       - deployment: Deploy
         displayName: Deploy
-        pool:
-          vmImage: $(vmImageName)
+        pool: Self-Hosted-Ubuntu-Agent
         environment: "Gaurav524DeployService-1470.default"
         strategy:
           runOnce:
